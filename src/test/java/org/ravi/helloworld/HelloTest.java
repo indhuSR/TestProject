@@ -1,30 +1,18 @@
 package org.ravi.helloworld;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+//import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
-public class HelloTest {
-	Hello hello;
-
-	@Before
-	public void setUp() throws Exception {
-		hello = new Hello();
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
+public class AppTest{
+	
 	@Test
-	public void testDisplayHelloMessagae() {
-		//fail("Not yet implemented");
-		Object expected = "hi";
-		Object actual = hello.displayHelloMessagae("hi");
-		assertEquals(expected, actual);
-		
-	}
-
+	public void testHome() {
+		WebDriver driver = new FirefoxDriver();
+                driver.get("http://localhost:8080/Helloworld.war/");
+        }
 }
